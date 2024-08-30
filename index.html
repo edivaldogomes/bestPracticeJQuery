@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <div>
+      <div>
+        <div>
+          <div>
+            <div id="parentDiv">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      if (!jQuery) {
+        document.write('<script src="js/jquery.min.js"><\/script>');
+      }
+    </script>
+    <script>
+      const $container = $("#container");
+      $(container).html("<p>Hello</p>");
+      $(container).css("padding", "10px");
+      $(container).hide();
+      $(container).show();
+
+      const $span = $("span").detach();
+      $span.text("Hello World!");
+      $span.text("Hello 2!");
+      $span.text("Hello 3!");
+      $span.text("Hello 4!");
+      $span.css("padding", "5px");
+      $("#parentDiv").append($span);
+
+      $(container).after("<p>Hello</p>").css("padding", "5px").hide().show();
+    </script>
+  </body>
+</html>
